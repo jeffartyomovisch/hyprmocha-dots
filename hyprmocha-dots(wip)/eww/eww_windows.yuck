@@ -1,0 +1,24 @@
+(include "eww_widgets.yuck")
+
+(defwindow sys
+  :class "cpu-win"
+  :wm-ignore true
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry :x "200px"
+                      :y "275px"
+                      :width "170px"
+                      :height "48px"
+                      :anchor "top left")
+(sys))
+
+(defwindow bigpowermenu
+  :wm-ignore true
+  :monitor 1 
+  :windowtype "dock"
+  :geometry (geometry :x "0px"
+                      :y "0%"
+                      :width "20%"
+                      :height "10%"
+                      :anchor "center center")
+(bigpowermenu))

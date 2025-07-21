@@ -1,0 +1,19 @@
+(defwidget metric [label value onchange]
+  (box :orientation "h" :class "metric" :space-evenly false
+    (box :class "label" label)
+    (scale :min 0 :max 101 :active {onchange != ""} :value value :onchange onchange)))
+
+(defwidget sys[]
+  (box :class "cpu" :orientation "v" :space-evenly false :halign "center" :valign "center"
+    (metric :label "﬙" :value {EWW_CPU.avg} :onchange "")
+    (metric :label "" :value {EWW_RAM.used_mem_perc} :onchange "")
+    (metric :label "" :value {(EWW_NET.wlan0.NET_UP)/100} :onchange "")
+    (metric :label "" :value {(EWW_DISK["/"].free / EWW_DISK["/"].total) * 100} :onchange "")))
+
+(defwidget bigpowermenu []
+  (box :orientation "h" :space-evenly false :class "menubox" :halign "center" :valign "center" :spacing 20
+    (button :class "shutdown" :onrightclick "systemctl poweroff" "")
+    (button :class "reboot" :onrightclick "systemctl reboot" "")
+    (button :class "lock" :onrightclick "hyprlock" "")
+    (button :class "suspend" :onrightclick "systemctl suspend" "")
+    (button :class "logout" :onrightclick "hyprctl dispatch exit" "")))
