@@ -2,4 +2,5 @@
 
 **(wip)**
 
-mocha style dotfiles for hyprland
+simple mocha style dotfiles for hyprland
+made in my free time for personal use ig
